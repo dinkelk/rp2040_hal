@@ -23,9 +23,9 @@ is
        Prio    : Interrupt_Priority)
    with Inline;
 
-   procedure Interrupt_Request_Handler
-   with Export,
-        Convention => Asm,
-        External_Name => "__gnat_irq_trap";
+  -- procedure Interrupt_Request_Handler
+  -- with Export,
+  --      Convention => Asm,
+  --      External_Name => "__gnat_irq_trap";
 
 end RP_Interrupts;

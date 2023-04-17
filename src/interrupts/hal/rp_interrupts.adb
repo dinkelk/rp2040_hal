@@ -25,19 +25,19 @@ package body RP_Interrupts is
       Enable_Interrupt (Id);
    end Attach_Handler;
 
-   procedure Interrupt_Request_Handler
-   is
-      IPSR : UInt32;
-      Id   : Interrupt_ID;
-   begin
-      Asm ("mrs %0, ipsr", UInt32'Asm_Output ("=r", IPSR), Volatile => True);
-      Id := Interrupt_ID (IPSR - 16);
+   -- procedure Interrupt_Request_Handler
+   -- is
+   --    IPSR : UInt32;
+   --    Id   : Interrupt_ID;
+   -- begin
+   --    Asm ("mrs %0, ipsr", UInt32'Asm_Output ("=r", IPSR), Volatile => True);
+   --    Id := Interrupt_ID (IPSR - 16);
 
-      if Handlers (Id) /= null then
-         Handlers (Id).all;
-      else
-         raise Program_Error with "Unhandled IRQ " & Id'Image;
-      end if;
-   end Interrupt_Request_Handler;
+   --    if Handlers (Id) /= null then
+   --       Handlers (Id).all;
+   --    else
+   --       raise Program_Error with "Unhandled IRQ " & Id'Image;
+   --    end if;
+   -- end Interrupt_Request_Handler;
 
 end RP_Interrupts;
