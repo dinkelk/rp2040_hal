@@ -53,7 +53,7 @@ is
       with Export, Convention => C, External_Name => "__aeabi_f2uiz";
 
    function fsqrt (V : Float) return Float
-      with Export, Convention => C, External_Name => "sqrtf";
+      with Export, Convention => C, External_Name => "__aeabi_sqrtf";
 
    --  These trig functions only work in the range -128.0 .. 128.0 and return
    --  slightly incorrect values. Use at your own risk.
